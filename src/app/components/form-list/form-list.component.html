@@ -1,0 +1,20 @@
+<form class="form-container" [formGroup]="addTaskForm" (ngSubmit)="submit()" >
+    <h2>Add task</h2>
+    <h3 *ngIf="title">{{title}}</h3>
+    <p *ngFor="let description of descriptions">{{description}}</p>
+    <div *ngIf="!title" class="small-container">
+        <label for="title">Add title for the task:</label>
+        <input formControlName="title" name="title" placeholder="descripción" type="text">   
+    </div>
+    <div *ngIf="!title" class="button-container">
+        <button (click)="addTask()" type="button">Add title</button>
+    </div>    
+    <div class="small-container">
+        <label for="descr">Add description for the task:</label>
+        <input formControlName="descr" name="descr" placeholder="descripción" type="text">        
+    </div>
+    <div class="button-container">
+        <button (click)="addTask()" type="button">Add task</button>
+        <button (click)="submitFullTask()" type="button">I'm done!</button>
+    </div>
+</form>
