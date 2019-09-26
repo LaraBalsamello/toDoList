@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-list',
   templateUrl: './form-list.component.html',
   styleUrls: ['./form-list.component.scss']
 })
-export class FormListComponent implements OnInit {
+export class FormListComponent {
 
-  title;
-  descriptions: Array<string> = []
+  title: string;
+  descriptions: Array<string> = [];
+  fullList: Object;
+  @Output() valuesForList: EventEmitter<Object> = new EventEmitter();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,21 +22,26 @@ export class FormListComponent implements OnInit {
     descr: []
   })
 
-  ngOnInit() {
-
+  addTask(){
+    this.title = this.addTaskForm.get('title').value;
+    if(this.addTaskForm.get('descr').value!==null){
+      this.descriptions.push(this.addTaskForm.get('descr').value);
+      this.addTaskForm.get('descr').setValue(null);
+    }
   }
 
   submitFullTask(){
     if(this.addTaskForm.get('descr').value!==null){
       this.descriptions.push(this.addTaskForm.get('descr').value);
     }
-  }
-
-  addTask(){
-    this.title = this.addTaskForm.get('title').value;
-    if(this.addTaskForm.get('descr').value!==null){
-      this.descriptions.push(this.addTaskForm.get('descr').value);
+    let fullList = {
+      titles: this.title,
+      descr: this.descriptions
     }
+    this.valuesForList.emit(fullList);
+    this.title = undefined;
+    this.descriptions = [];
+    this.addTaskForm.get('title').setValue(null);
+    this.addTaskForm.get('descr').setValue(null);  
   }
-
 }

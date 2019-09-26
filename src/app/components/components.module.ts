@@ -22,7 +22,7 @@ const components = [ ListComponent, FormListComponent ]
   ],
   exports: [ components ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
 })
 
 export class ComponentsModule { }

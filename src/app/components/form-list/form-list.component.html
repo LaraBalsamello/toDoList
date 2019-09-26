@@ -1,4 +1,4 @@
-<form class="form-container" [formGroup]="addTaskForm" (ngSubmit)="submit()" >
+<form class="form-container" [formGroup]="addTaskForm">
     <h2>Add task</h2>
     <h3 *ngIf="title">{{title}}</h3>
     <p *ngFor="let description of descriptions">{{description}}</p>
@@ -15,6 +15,6 @@
     </div>
     <div class="button-container">
         <button (click)="addTask()" type="button">Add task</button>
-        <button (click)="submitFullTask()" type="button">I'm done!</button>
+        <button [class.inactive]="!title" [attr.disable]="!title" (click)="submitFullTask()" type="button">I'm done!</button>
     </div>
 </form>

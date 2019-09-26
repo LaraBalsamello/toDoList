@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ComponentsModule } from '../components/components.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { ListComponent } from '../components/list/list.component';
 
 const components = [ MainPageComponent ]
 
@@ -16,7 +17,8 @@ const components = [ MainPageComponent ]
   ],
   exports: [ components ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
+  entryComponents: [ ListComponent ]
 })
 
 export class PagesModule { }

@@ -3,3 +3,17 @@
     flex-direction: row;
     align-items: center;
 }
+
+.container-icon-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    mat-icon {
+        margin-left: 15px;
+        border-radius: 8px;
+        padding: 3px;
+        border: 1px solid black;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}

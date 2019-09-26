@@ -1,4 +1,6 @@
-<h3> Este es el titulo de prueba de los tasks</h3>
-<div class="container-checkbox" *ngFor="let i of [1,2,3,4,5,6,7]">
-    <mat-checkbox></mat-checkbox> <p>Esta es la descripción</p>
+<div class="container-icon-title">
+    <h3>{{title}}<mat-icon>edit</mat-icon></h3>
+</div>
+<div class="container-checkbox" *ngFor="let des of descr">
+    <mat-checkbox></mat-checkbox> <p>{{des}}</p>
 </div>
