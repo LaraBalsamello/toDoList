@@ -1,7 +1,7 @@
 .boxes {
     border: 1px solid gainsboro;
     width: 19%;
-    padding: 1rem;
+    padding: 1.5rem;
     padding-top: 0;
     background-color: #fff;
     margin: 1rem;
@@ -9,4 +9,5 @@
     border-radius: 8px;
     border-bottom: 1px hidden #fff;
     max-height: 350px;
+    min-height: 300px;
 }

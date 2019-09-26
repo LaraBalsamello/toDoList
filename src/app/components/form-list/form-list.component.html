@@ -1,7 +1,11 @@
 <form class="form-container" [formGroup]="addTaskForm">
-    <h2>Add task</h2>
+    <h3 *ngIf="!title">Add task</h3>
     <h3 *ngIf="title">{{title}}</h3>
-    <p *ngFor="let description of descriptions">{{description}}</p>
+    <div class="container-scroll">
+        <div *ngFor="let description of descriptions" class="container-ps">
+            <mat-checkbox ></mat-checkbox><p>{{description}}</p>
+        </div>
+    </div>
     <div *ngIf="!title" class="small-container">
         <label for="title">Add title for the task:</label>
         <input formControlName="title" name="title" placeholder="descripción" type="text">   

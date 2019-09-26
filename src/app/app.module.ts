@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
     PagesModule,
     ComponentsModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

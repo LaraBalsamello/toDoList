@@ -1,5 +1,7 @@
 @import "~@angular/material/theming";
 
-.mat-checkbox-frame {
-    border: unset !important;
-}
+@include mat-core();
+
+// .mat-checkbox-frame {
+//     border: unset !important;
+// }

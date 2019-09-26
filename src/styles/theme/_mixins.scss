@@ -1,0 +1,11 @@
+@mixin icon-button($color, $borderColor, $background) {
+    margin-left: 15px;
+    border-radius: 8px;
+    padding: 3px;
+    border: 1px solid $borderColor;
+    color: $color;
+    background: $background;
+    border-radius: 6px;
+    cursor: pointer;
+}
+  

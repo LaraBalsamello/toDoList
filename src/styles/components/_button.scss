@@ -3,3 +3,11 @@ button {
     border-radius: 5px;
     padding: 0.5rem;
 }
+
+.edit-button {
+    @include icon-button($white, $white, $button-edit);
+}
+
+.remove-button {
+    @include icon-button($white, $white, $button-remove);
+}

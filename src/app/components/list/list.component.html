@@ -1,6 +1,11 @@
 <div class="container-icon-title">
-    <h3>{{title}}<mat-icon>edit</mat-icon></h3>
+    <h3>{{title}}
+        <mat-icon class="remove-button">delete</mat-icon>
+    </h3>
 </div>
-<div class="container-checkbox" *ngFor="let des of descr">
-    <mat-checkbox></mat-checkbox> <p>{{des}}</p>
+<div class="container-scroll">
+    <div class="container-checkbox" *ngFor="let des of descr">
+        <mat-checkbox ></mat-checkbox><p>{{des}}</p>
+    </div>
 </div>
+
