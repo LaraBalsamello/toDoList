@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnChanges } from '@angular/core';
 import { ListComponent } from 'src/app/components/list/list.component';
 
 @Component({
@@ -11,6 +11,7 @@ export class MainPageComponent {
   @ViewChild("container", { read: ViewContainerRef }) container: ViewContainerRef;
   componentRef1: any;
   valuesForList: Array <Object> = [];
+  
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -27,6 +28,7 @@ export class MainPageComponent {
         // pass some data to the component
         this.componentRef1.instance.title = element['titles'];
         this.componentRef1.instance.descr = element['descr'];
+        this.componentRef1.instance.viewRef = this.componentRef1;
       }
     }
     this.valuesForList = [];
