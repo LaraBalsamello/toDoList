@@ -10,8 +10,27 @@
     }
 }
 
+.decorate-text {
+    text-decoration: line-through ;
+}
+
 .container-icon-title {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    h3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.container-scroll {
+    max-height: unset;
+} 
+
+@media only screen and (max-width:600px) {
+    .container-scroll {
+        display: none;
+    }    
 }

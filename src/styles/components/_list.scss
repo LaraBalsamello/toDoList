@@ -1,13 +1,27 @@
 .boxes {
     border: 1px solid gainsboro;
-    width: 19%;
-    padding: 1.5rem;
+    width: 23%;
+    padding: 3%;
     padding-top: 0;
     background-color: #fff;
-    margin: 1rem;
+    margin: 2%;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     border-radius: 8px;
     border-bottom: 1px hidden #fff;
-    max-height: 350px;
+    max-height: 370px;
     min-height: 300px;
+}
+
+@media only screen and (max-width:600px) {
+    .boxes {
+        width: 100%;
+        max-height: unset;
+        min-height: unset;
+    }
+}
+
+@media only screen and (max-width:1000px) and (min-width: 600px) {
+    .boxes {
+        width: 39.5%;   
+    }  
 }
