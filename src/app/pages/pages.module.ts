@@ -4,6 +4,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ComponentsModule } from '../components/components.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { ListComponent } from '../components/list/list.component';
+import { CommonModule } from '@angular/common';
 
 const components = [ MainPageComponent ]
 
@@ -13,7 +14,9 @@ const components = [ MainPageComponent ]
   ],
   imports: [
     ComponentsModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    CommonModule
   ],
   exports: [ components ],
   providers: [],

@@ -1,0 +1,9 @@
+{
+    "/fake-backend": {
+        "target": "http://localhost:4211",
+        "secure": false,
+        "pathRewrite": {
+            "^/fake-backend": ""
+        }
+    }
+}

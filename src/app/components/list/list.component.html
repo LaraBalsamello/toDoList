@@ -1,10 +1,10 @@
 <div class="container-icon-title">
-    <h3>{{title}}
-        <mat-icon (click)="deleteList()" class="remove-button">delete</mat-icon>
+    <h3>{{list.title}}
+        <mat-icon (click)="deleteList(list)" class="remove-button">delete</mat-icon>
     </h3>
 </div>
 <div class="container-scroll">
-    <div (click)="decorateText($event, des)" class="container-checkbox" *ngFor="let des of descr">
+    <div (click)="decorateText($event, des)" class="container-checkbox" *ngFor="let des of list.descr">
         <mat-checkbox><p>{{des}}</p></mat-checkbox>
     </div>
 </div>

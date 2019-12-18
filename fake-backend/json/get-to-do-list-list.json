@@ -1,0 +1,20 @@
+[
+    {
+        "title": "titulo de  la lista1",
+        "descr": [
+            "descripcion de la lista"
+        ]
+    },
+    {
+        "title": "titulo de  la lista2",
+        "descr": [
+            "descripcion de la lista"
+        ]
+    },
+    {
+        "title": "titulo de  la list3a",
+        "descr": [
+            "descripcion de la lista"
+        ]
+    }
+]
