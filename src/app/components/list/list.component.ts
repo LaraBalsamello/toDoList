@@ -7,7 +7,7 @@ import { List } from 'src/app/models/list';
 	styleUrls: [ './list.component.scss' ]
 })
 export class ListComponent {
-	@Input()list: List;
+	@Input() list: List;
 	@Output() removeList: EventEmitter<any> = new EventEmitter();
 	doneTasks: Array<string> = [];
 	decorate;
@@ -24,7 +24,7 @@ export class ListComponent {
 
 	getAllDone(des) {
 		this.doneTasks.push(des);
-		// console.log(des, this.doneTasks, this.descr);
+		console.log(des, this.doneTasks, this.list);
 		// for (const i in this.doneTasks) {
 		// 	if (this.doneTasks.hasOwnProperty(i)) {
 		// 		const element = this.doneTasks[i];
@@ -33,10 +33,10 @@ export class ListComponent {
 		// 		}
 		// 	}
 		// }
-		// if (this.doneTasks == this.list.descr) {
-		// 	console.log('allDone');
-		// } else {
-		// 	console.log('no es el mismo array');
-		// }
+		if (this.doneTasks == this.list.descr) {
+			console.log('allDone');
+		} else {
+			console.log('no es el mismo array');
+		}
 	}
 }

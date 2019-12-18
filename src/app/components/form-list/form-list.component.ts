@@ -35,7 +35,7 @@ export class FormListComponent {
       this.descriptions.push(this.addTaskForm.get('descr').value);
     }
     let fullList = {
-      titles: this.title,
+      title: this.title,
       descr: this.descriptions
     }
     this.valuesForList.emit(fullList);
