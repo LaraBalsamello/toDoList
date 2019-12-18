@@ -1,36 +1,37 @@
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnChanges } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { ListComponent } from 'src/app/components/list/list.component';
+import { ListService } from 'src/app/services/list.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit{
 
-  @ViewChild("container", { read: ViewContainerRef }) container: ViewContainerRef;
-  componentRef1: any;
-  valuesForList: Array <Object> = [];
-  
+  lists: Array<Object>;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
+    private listService: ListService
     ) { }
 
-  catchInfo($evt){
-    this.valuesForList.push($evt);
-    for (const i in this.valuesForList) {
-      if (this.valuesForList.hasOwnProperty(i)) {
-        const element = this.valuesForList[i];
-        const componentFactory1 = this.componentFactoryResolver.resolveComponentFactory(ListComponent);
-        // add the component to the view
-        this.componentRef1 = this.container.createComponent(componentFactory1);   
-        // pass some data to the component
-        this.componentRef1.instance.title = element['titles'];
-        this.componentRef1.instance.descr = element['descr'];
-        this.componentRef1.instance.viewRef = this.componentRef1;
+  ngOnInit(): void {
+    this.listService.getList().subscribe(response => {
+      this.lists = response;
+    })  
+  }
+
+  removeList(list) {
+    console.log(list);
+    for (const listX of this.lists) {
+      if(listX === list) {
+        this.lists.splice(this.lists.indexOf(listX),1);
       }
     }
-    this.valuesForList = [];
+  }
+
+  catchInfo($evt){
+    this.lists.push($evt);
   }
 }

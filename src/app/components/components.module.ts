@@ -1,9 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ListComponent } from './list/list.component';
-import { PagesModule } from '../pages/pages.module';
-import { RouterModule, Router } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 import { FormListComponent } from './form-list/form-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/material/material.module';
@@ -21,7 +18,7 @@ const components = [ ListComponent, FormListComponent ]
     CommonModule
   ],
   exports: [ components ],
-  providers: [],
+  providers: [ ],
   bootstrap: [],
 })
 
